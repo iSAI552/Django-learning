@@ -47,7 +47,7 @@ class CountryPopularIn(models.Model):
         ("AU", "Australia")
     ]
     name = models.CharField(max_length=100)
-    continent = models.CharField(max_length=2 ,choices=CONTINENT_TYPE_CHOICES)
+    continent = models.CharField(max_length=2, choices=CONTINENT_TYPE_CHOICES)
     heroes_popular = models.ManyToManyField(HeroVariety, related_name="countries")
 
     def __str__(self):

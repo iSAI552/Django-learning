@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+test content for forms
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+    <button class="bg-blue-400" type="submit">Search the country</button>
+    </form>
+
+    {% if countries %}
+        <h2>Countries popular in:</h2>
+        {% for country in countries %}
+            <li>{{ country.name }} -- {{ country.continent }}</li>
+        {% endfor %}
+
+    {% endif %}
+{% endblock %}
