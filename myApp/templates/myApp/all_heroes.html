@@ -4,6 +4,20 @@
     myApp
 {% endblock %}
 
+
 {% block content %}
 <h1>All heroes are here</h1>
+    <div class="grid grid-cols-3 gap-4 m-4">
+    {% for hero in heroes %}
+    <div class="bg-blue-400 p-5">
+        <img class="rounded" src="{{ hero.image.url }}" alt="">
+        <h3 class="text-2xl">{{ hero.name }}</h3>
+    <a href="{% url 'hero_detail' hero.id %}">
+        <button class="bg-orange-400">
+            {{ hero.type }} - {{ hero.id }}
+        </button>
+    </a>
+    </div>
+{% endfor %}
+    </div>
 {% endblock %}
